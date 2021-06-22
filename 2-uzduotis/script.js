@@ -7,22 +7,21 @@
 // Papildomai:
 // Pagal sukurtą obejktų masyvą, sukurti tiek pat div elementų, kuriuose išvedamas id ir vardas. Kas antras div - mėlynas.
 "use strict"
-var value1, value2
+let masyvas
+masyvas = [];
+for (let i=0; i <100;i++) {
+let objektas = {
 
-var result = []; 
-let vardas = "vardas"
-let id = "id"
-
-for( var i=0; i<100; i++ ) {
-  result.push( {'vardas' :vardas+ i, 'id' : i } ); // insert some more values in a loop
+  vardas: "vardas" + (i+1),
+  id: i+1,
 }
-console.log(result);
-for (let i=1; i <=100; i++) {
-    let divElementas = document.createElement("div");
-    divElementas.classList.add("baltas");
-    divElementas.innerText = (vardas + i) + "   "  +(id + i)
-    if ( i % 2 ==0){
-        divElementas.classList.add("melynas")
-    }
-    document.querySelector(".rezultas").append(divElementas);
+masyvas[i] = objektas;
+console.log(masyvas[i]);
+ let hueta = document.createElement("div");
+ hueta.classList.add("baltas");
+ if (i % 2 ==0) {
+   hueta.classList.add("melynas");
+ }
+ hueta.innerText = objektas.vardas + " " + "id" +  objektas.id
+ document.querySelector(".rezultas").append(hueta);
 }

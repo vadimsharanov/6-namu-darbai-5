@@ -11,8 +11,6 @@ document.getElementById("mygtukas").addEventListener("click", function(){
     let skaiciusIsIvesties1 = parseFloat(document.getElementById("ivestis1").value);
     let skaiciusIsIvesties2 = parseFloat(document.getElementById("ivestis2").value);
 
-
-
 const skaiciuotuvas =  {
 
 sk1:0,
