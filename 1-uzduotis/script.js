@@ -47,16 +47,10 @@ liekana: function () {
     return ieskomLiekana
 },
 
-skMasyvas: function () {
-    let skMasyvas = []
-    return skMasyvas;
-},
-
 rezultas: function () {
-    
     let perdavimas;
     this.skMasyvas = perdavimas;
-     perdavimas = [this.sudetis(),this.atimtis(),this.daugyba(),this.dalyba (),this.saknis (),this.liekana()];
+    perdavimas = [this.sudetis(),this.atimtis(),this.daugyba(),this.dalyba (),this.saknis (),this.liekana()];
      return perdavimas
 },
 vidurkis: function (){
@@ -67,15 +61,23 @@ vidurkis: function (){
         skaicius = masyvas[indekas];
         suma += skaicius;
         indekas = indekas + 1 ;
-    }
-    masyvas[masyvas.length] = suma;
-     return console.log("suma =  " + suma, this.rezultas());
+    }  
+    vidurkis = (suma / masyvas.length);
+
+     return ["vidurkis = " + vidurkis ];
 }
 
 }
 skaiciuotuvas.paleidimas(skaiciusIsIvesties1, skaiciusIsIvesties2)
 
-let atsakymas = skaiciuotuvas.vidurkis()
+// let atsakymas = skaiciuotuvas.rezulta()
+// document.getElementById("rezultas").innerText = atsakymas
+
+let vidurkis = skaiciuotuvas.vidurkis();
+let atsakymas = (skaiciuotuvas.rezultas());
+document.getElementById("rezultas").innerText = (vidurkis  + "///" + atsakymas);
+
+
 
 
 })
