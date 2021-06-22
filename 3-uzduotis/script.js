@@ -21,40 +21,26 @@ let kvadratas = {
         },
 
         plotasPerimetrasIstrizaine: function() {
-            if ( this.ilgis1 != this.ilgis2) {
-                console.log("poshel na");
-            }
-            else {
             let plotas = this.ilgis1*this.ilgis2
-            let perimetras = this.ilgis1*4;
-            let istrizaine = Math.sqrt(2) * this.ilgis1
+            let perimetras = this.ilgis1*2 + this.ilgis2*2;
+            let istrizaine = Math.sqrt(this.ilgis1**2 + this.ilgis2**2);
         
-        return [plotas + "px", perimetras + " px ", istrizaine + "px"]
-        
-    }
-     
+        return [plotas,perimetras,istrizaine]
     },
-    styliausKeitimas: function () {
-        
-        return document.getElementById("kvadratello").style.border ="this.ilgis 1 solid red"
+    styliausKeitimas: function() {
+        document.querySelector(".kvadratas").style.width = this.ilgis1 +  "1px"
+        document.querySelector(".kvadratas").style.height=  this.ilgis2 + "1px"
+    },
 
-        
-    },
-        isvestis: function () {
-        return console.log(this.plotasPerimetrasIstrizaine())
-    },
-        
-    }
+        rezultas: function () {
+            document.getElementById("rezultas1").innerText = "plotas = " + this.plotasPerimetrasIstrizaine()[0]
+            document.getElementById("rezultas2").innerText = "perimetras = " + this.plotasPerimetrasIstrizaine()[1]
+            document.getElementById("rezultas3").innerText = "istrizaine = " + this.plotasPerimetrasIstrizaine()[2]
+        }
+}
 
-    
 kvadratas.paleidimas(skaiciusIsIvesties1, skaiciusIsIvesties2);
-
-let a = kvadratas.plotasPerimetrasIstrizaine();
-document.getElementById("rezultas").innerText = a;
-
-
-
-
+kvadratas.rezultas()
+kvadratas.styliausKeitimas()
 
 })
-
