@@ -51,8 +51,6 @@ kvadratas.paleidimas(skaiciusIsIvesties1, skaiciusIsIvesties2);
 
 let a = kvadratas.plotasPerimetrasIstrizaine();
 document.getElementById("rezultas").innerText = a;
-let n = 10;
-document.getElementById("kvadratello").style.border ="n solid red"
 
 
 
